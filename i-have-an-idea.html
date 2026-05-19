@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Have an Idea — Buy & Sell Business Ideas</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#080c1a;
+  --navy2:#0d1126;
+  --navy3:#121830;
+  --amber:#f5a623;
+  --amber-hi:#ffe066;
+  --amber-lo:#c47d10;
+  --cream:#fdf4dc;
+  --muted:#7a839e;
+  --border:rgba(245,166,35,0.14);
+  --white:#fff;
+}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.1rem 3rem;display:flex;align-items:center;justify-content:space-between;background:rgba(8,12,26,0.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--amber);display:flex;align-items:center;gap:9px;text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:rgba(253,244,220,.55);font-size:.88rem;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--cream)}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.nav-sign{font-size:.88rem;color:rgba(253,244,220,.55);text-decoration:none;transition:color .2s}
+.nav-sign:hover{color:var(--cream)}
+.nav-btn{background:var(--amber);color:var(--navy);font-family:'DM Sans',sans-serif;font-weight:500;font-size:.85rem;padding:.5rem 1.3rem;border:none;border-radius:3px;cursor:pointer;text-decoration:none;transition:background .2s}
+.nav-btn:hover{background:var(--amber-hi)}
+
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:7rem 2rem 5rem;position:relative;overflow:hidden}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(245,166,35,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(245,166,35,.035) 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
+.radial-bg{position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(245,166,35,.09) 0%,transparent 65%);pointer-events:none}
+.bulb{animation:bob 4s ease-in-out infinite;margin-bottom:2.8rem;position:relative}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.bulb-halo{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,rgba(255,224,102,.28) 0%,transparent 70%);animation:halo 2.2s ease-in-out infinite}
+@keyframes halo{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.18)}}
+h1{font-family:'Playfair Display',serif;font-size:clamp(3.2rem,8vw,7rem);font-weight:900;line-height:.95;color:var(--white);margin-bottom:1.5rem}
+h1 em{font-style:italic;color:var(--amber)}
+.hero-sub{font-size:1.1rem;color:var(--muted);max-width:500px;margin:0 auto 2.8rem;line-height:1.8}
+.search-bar{display:flex;background:var(--navy2);border:1px solid var(--border);border-radius:4px;overflow:hidden;max-width:520px;width:100%;margin:0 auto 1.2rem}
+.search-bar input{flex:1;background:none;border:none;outline:none;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:.95rem;padding:.85rem 1.2rem}
+.search-bar input::placeholder{color:var(--muted)}
+.search-bar button{background:var(--amber);color:var(--navy);font-family:'DM Sans',sans-serif;font-weight:500;font-size:.88rem;padding:.85rem 1.5rem;border:none;cursor:pointer;transition:background .2s;white-space:nowrap}
+.search-bar button:hover{background:var(--amber-hi)}
+.tag-row{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap}
+.tag{font-size:.75rem;color:var(--muted);border:1px solid rgba(255,255,255,.08);padding:.25rem .75rem;border-radius:20px;cursor:pointer;transition:all .2s}
+.tag:hover{border-color:var(--amber);color:var(--amber)}
+.trust-bar{display:flex;gap:3rem;justify-content:center;flex-wrap:wrap;margin-top:5rem;padding-top:3rem;border-top:1px solid var(--border)}
+.trust-item{text-align:center}
+.trust-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--amber);display:block;line-height:1}
+.trust-label{font-size:.8rem;color:var(--muted);margin-top:.3rem}
+
+section{padding:6rem 2rem}
+.wrap{max-width:1080px;margin:0 auto}
+.eyebrow{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);font-weight:500;margin-bottom:.6rem;display:block}
+h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:700;color:var(--white);line-height:1.1;margin-bottom:1rem}
+h2 em{font-style:italic;color:var(--amber)}
+.body-text{font-size:1rem;color:var(--muted);max-width:480px;line-height:1.8}
+.rule{width:48px;height:2px;background:var(--amber);margin:1.2rem 0 2rem}
+
+.ideas-section{background:var(--navy2)}
+.ideas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin-top:3rem}
+.idea-card{background:var(--navy);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:1.6rem;cursor:pointer;transition:border-color .25s,transform .25s;position:relative;text-decoration:none;display:block}
+.idea-card:hover{border-color:var(--amber);transform:translateY(-3px)}
+.idea-tag{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--amber-lo);font-weight:500;margin-bottom:.75rem}
+.idea-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--white);margin-bottom:.5rem;line-height:1.25}
+.idea-desc{font-size:.85rem;color:var(--muted);line-height:1.6;margin-bottom:1.2rem}
+.idea-footer{display:flex;justify-content:space-between;align-items:center}
+.idea-price{font-size:1.1rem;font-weight:500;color:var(--amber)}
+.idea-bids{font-size:.78rem;color:var(--muted)}
+.idea-badge{position:absolute;top:1rem;right:1rem;font-size:.65rem;background:rgba(245,166,35,.12);color:var(--amber);padding:.2rem .55rem;border-radius:2px;font-weight:500;text-transform:uppercase;letter-spacing:.08em}
+
+.how{background:var(--navy)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:3rem;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.step{padding:2.2rem 2rem;border-right:1px solid var(--border)}
+.step:last-child{border-right:none}
+.step-n{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:rgba(245,166,35,.1);line-height:1;margin-bottom:.8rem}
+.step h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--white);margin-bottom:.5rem}
+.step p{font-size:.86rem;color:var(--muted);line-height:1.65}
+
+.for-section{background:var(--navy3)}
+.for-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem}
+.for-card{border:1px solid var(--border);border-radius:8px;padding:2.5rem}
+.for-card.buyer{background:rgba(245,166,35,.04)}
+.for-label{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:1.2rem;display:block}
+.buyer .for-label{color:var(--amber)}
+.seller .for-label{color:#7ea4ff}
+.for-card h3{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--white);margin-bottom:.75rem;line-height:1.1}
+.for-card p{font-size:.92rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem}
+.for-list{list-style:none;display:flex;flex-direction:column;gap:.65rem}
+.for-list li{font-size:.88rem;color:var(--muted);display:flex;gap:.75rem;align-items:flex-start}
+.for-list li::before{content:'✓';color:var(--amber);flex-shrink:0;font-weight:500;margin-top:.05rem}
+.seller .for-list li::before{color:#7ea4ff}
+.for-cta{display:inline-block;margin-top:1.8rem;font-size:.88rem;font-weight:500;text-decoration:none;padding:.65rem 1.4rem;border-radius:3px;transition:all .2s}
+.for-cta.buy{background:var(--amber);color:var(--navy)}
+.for-cta.buy:hover{background:var(--amber-hi)}
+.for-cta.sell{border:1px solid rgba(126,164,255,.4);color:#7ea4ff}
+.for-cta.sell:hover{border-color:#7ea4ff;background:rgba(126,164,255,.07)}
+
+.legal-section{background:var(--navy2)}
+.legal-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.legal-doc{background:var(--navy);border:1px solid var(--border);border-radius:8px;padding:2rem;font-size:.85rem}
+.legal-doc-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.doc-icon{width:36px;height:36px;border-radius:6px;background:rgba(245,166,35,.12);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.doc-title{font-size:.9rem;color:var(--cream);font-weight:500}
+.doc-sub{font-size:.75rem;color:var(--muted)}
+.doc-row{display:flex;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.82rem}
+.doc-row:last-child{border-bottom:none}
+.doc-key{color:var(--muted)}
+.doc-val{color:var(--cream)}
+.doc-val.green{color:#5fd48a}
+.transfer-badge{background:rgba(95,212,138,.1);border:1px solid rgba(95,212,138,.25);color:#5fd48a;font-size:.75rem;font-weight:500;padding:.3rem .8rem;border-radius:3px;display:inline-block;margin-top:1.2rem}
+
+.testi-section{background:var(--navy)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem}
+.testi{background:var(--navy2);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:1.75rem}
+.stars{color:var(--amber);font-size:.85rem;margin-bottom:.9rem;letter-spacing:.15em}
+.testi-text{font-size:.9rem;color:var(--muted);line-height:1.7;margin-bottom:1.2rem}
+.testi-author{font-size:.8rem;color:var(--cream)}
+.testi-role{font-size:.75rem;color:var(--muted)}
+
+.pricing-section{background:var(--navy3)}
+.pricing-card{background:var(--navy);border:1px solid var(--border);border-radius:10px;padding:3rem;max-width:560px;margin:3rem auto 0;text-align:center}
+.price-big{font-family:'Playfair Display',serif;font-size:5.5rem;font-weight:900;color:var(--amber);line-height:1}
+.price-of{font-size:1rem;color:var(--muted);margin-bottom:.25rem}
+.price-desc{font-size:.9rem;color:var(--muted);margin:1.2rem 0 2rem;line-height:1.7}
+.price-bullets{list-style:none;display:flex;flex-direction:column;gap:.65rem;text-align:left;margin-bottom:2rem}
+.price-bullets li{font-size:.88rem;color:var(--muted);display:flex;gap:.75rem;align-items:flex-start}
+.price-bullets li::before{content:'✦';color:var(--amber);font-size:.6rem;flex-shrink:0;margin-top:.35rem}
+.price-bullets li strong{color:var(--cream);font-weight:400}
+
+.cta-section{background:var(--navy2);text-align:center;padding:8rem 2rem;position:relative;overflow:hidden}
+.cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(245,166,35,.08) 0%,transparent 65%);pointer-events:none}
+.cta-section h2{font-size:clamp(2.2rem,5vw,3.8rem);margin-bottom:1.2rem}
+.cta-section p{color:var(--muted);font-size:1.05rem;max-width:420px;margin:0 auto 2.5rem}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-ghost{display:inline-block;padding:.9rem 2.2rem;font-size:1rem;color:rgba(253,244,220,.6);border:1px solid rgba(255,255,255,.15);border-radius:3px;text-decoration:none;transition:all .2s;font-family:'DM Sans',sans-serif}
+.btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding:3rem;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem}
+.foot-brand p{font-size:.82rem;color:var(--muted);max-width:220px;line-height:1.65;margin-top:.75rem}
+.foot-col h4{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:1rem;font-weight:500}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.foot-col a{font-size:.85rem;color:var(--muted);text-decoration:none;transition:color .2s}
+.foot-col a:hover{color:var(--cream)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.05);padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-bottom p{font-size:.78rem;color:rgba(122,131,158,.5)}
+
+@media(max-width:900px){
+  .legal-inner,.for-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .step:nth-child(2){border-right:none}
+  .step:nth-child(3){border-top:1px solid var(--border)}
+  .step:nth-child(4){border-top:1px solid var(--border)}
+  .testi-grid{grid-template-columns:1fr}
+  footer{grid-template-columns:1fr 1fr}
+  nav .nav-links{display:none}
+}
+@media(max-width:600px){
+  footer{grid-template-columns:1fr}
+  .trust-bar{gap:1.5rem}
+  h1{font-size:3rem}
+  .steps{grid-template-columns:1fr}
+  .step{border-right:none;border-top:1px solid var(--border)}
+  .step:first-child{border-top:none}
+  .nav-sign{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#">
+    <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+      <path d="M13 2C9.134 2 6 5.134 6 9c0 2.2 1.1 4.15 2.8 5.35V17a.9.9 0 00.9.9h6.6a.9.9 0 00.9-.9v-2.65C18.9 13.15 20 11.2 20 9c0-3.866-3.134-7-7-7z" fill="#f5a623"/>
+      <rect x="10" y="18" width="6" height="1.4" rx=".7" fill="#f5a623"/>
+      <rect x="10.5" y="20.3" width="5" height="1.3" rx=".65" fill="#f5a623" opacity=".65"/>
+      <rect x="11.5" y="22.5" width="3" height="1" rx=".5" fill="#f5a623" opacity=".35"/>
+    </svg>
+    I Have an Idea
+  </a>
+  <ul class="nav-links">
+    <li><a href="#browse">Browse Ideas</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#legal">Legal Rights</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+  </ul>
+  <div class="nav-right">
+    <a class="nav-sign" href="#">Sign in</a>
+    <a class="nav-btn" href="#">Get Started</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="grid-bg"></div>
+  <div class="radial-bg"></div>
+  <div class="bulb" style="width:110px;height:150px;position:relative">
+    <div class="bulb-halo"></div>
+    <svg width="110" height="150" viewBox="0 0 110 150" fill="none" style="position:relative;z-index:1">
+      <defs>
+        <radialGradient id="g1" cx="50%" cy="38%" r="55%">
+          <stop offset="0%" stop-color="#ffe066"/>
+          <stop offset="100%" stop-color="#f5a623"/>
+        </radialGradient>
+      </defs>
+      <path d="M55 14C38.432 14 25 27.432 25 44c0 10.5 5.4 19.75 13.6 25.2V78a1 1 0 001 1h30.8a1 1 0 001-1v-8.8C79.6 63.75 85 54.5 85 44 85 27.432 71.568 14 55 14z" fill="url(#g1)" opacity=".92"/>
+      <path d="M44 54 L51 44 L46 36 L55 46 L64 36 L59 44 L66 54" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity=".75"/>
+      <rect x="38" y="80" width="34" height="8" rx="2" fill="#c47d10" opacity=".9"/>
+      <rect x="40" y="89" width="30" height="7" rx="2" fill="#9d6208" opacity=".85"/>
+      <rect x="42.5" y="97" width="25" height="6.5" rx="2" fill="#7a4c05" opacity=".85"/>
+    </svg>
+  </div>
+
+  <h1>Your next business<br>starts with an <em>idea.</em></h1>
+  <p class="hero-sub">Browse, bid on, and legally own business ideas — or sell yours to someone ready to build it. The first true marketplace for ideas.</p>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search ideas — SaaS, food tech, sustainability…">
+    <button>Search Ideas</button>
+  </div>
+  <div class="tag-row">
+    <span class="tag">🛒 E-commerce</span>
+    <span class="tag">⚡ SaaS</span>
+    <span class="tag">🌱 Sustainability</span>
+    <span class="tag">🏥 Health</span>
+    <span class="tag">🤖 AI</span>
+    <span class="tag">📱 Mobile</span>
+  </div>
+
+  <div class="trust-bar">
+    <div class="trust-item"><span class="trust-num">2,400+</span><span class="trust-label">Ideas listed</span></div>
+    <div class="trust-item"><span class="trust-num">$1.2M</span><span class="trust-label">Paid out to sellers</span></div>
+    <div class="trust-item"><span class="trust-num">10%</span><span class="trust-label">Commission only</span></div>
+    <div class="trust-item"><span class="trust-num">Global</span><span class="trust-label">Buyers &amp; sellers worldwide</span></div>
+  </div>
+</section>
+
+<section class="ideas-section" id="browse">
+  <div class="wrap">
+    <span class="eyebrow">Featured Ideas</span>
+    <h2>What's up for <em>auction right now.</em></h2>
+    <div class="rule"></div>
+    <div class="ideas-grid">
+      <a class="idea-card" href="#">
+        <div class="idea-badge">Hot 🔥</div>
+        <div class="idea-tag">SaaS · Productivity</div>
+        <div class="idea-title">AI Meeting Summarizer for Small Teams</div>
+        <div class="idea-desc">Lightweight tool that joins Zoom/Meet calls, generates action items, and sends follow-up emails automatically. No enterprise pricing — built for 5–20 person teams.</div>
+        <div class="idea-footer"><span class="idea-price">$3,200</span><span class="idea-bids">14 bids · 3 days left</span></div>
+      </a>
+      <a class="idea-card" href="#">
+        <div class="idea-tag">E-commerce · Food</div>
+        <div class="idea-title">Restaurant Leftover Subscription Box</div>
+        <div class="idea-desc">Partner with local restaurants to sell surplus prepared food at a discount, delivered same-evening. Reduces waste, saves customers money, supports local businesses.</div>
+        <div class="idea-footer"><span class="idea-price">$1,850</span><span class="idea-bids">7 bids · 6 days left</span></div>
+      </a>
+      <a class="idea-card" href="#">
+        <div class="idea-badge">New</div>
+        <div class="idea-tag">Health · Mobile</div>
+        <div class="idea-title">Medication Buddy — Accountability App</div>
+        <div class="idea-desc">Connects patients with a "buddy" who gets nudges when a dose is missed. Built for elderly users whose families live far away. Simple subscription model.</div>
+        <div class="idea-footer"><span class="idea-price">$4,500</span><span class="idea-bids">2 bids · 11 days left</span></div>
+      </a>
+      <a class="idea-card" href="#">
+        <div class="idea-tag">Sustainability · B2B</div>
+        <div class="idea-title">Carbon Offset Marketplace for SMBs</div>
+        <div class="idea-desc">Simple dashboard for small businesses to calculate, purchase, and display verified carbon offsets with a shareable green badge for their website.</div>
+        <div class="idea-footer"><span class="idea-price">$6,000</span><span class="idea-bids">9 bids · 2 days left</span></div>
+      </a>
+      <a class="idea-card" href="#">
+        <div class="idea-badge">Trending</div>
+        <div class="idea-tag">AI · Education</div>
+        <div class="idea-title">Personalized Textbook Explainer</div>
+        <div class="idea-desc">Upload any PDF textbook chapter, get a custom explanation at your reading level with practice questions. Targets students who can't afford private tutors.</div>
+        <div class="idea-footer"><span class="idea-price">$2,100</span><span class="idea-bids">21 bids · 1 day left</span></div>
+      </a>
+      <a class="idea-card" href="#">
+        <div class="idea-tag">Marketplace · Local</div>
+        <div class="idea-title">Skill Swap Platform for Freelancers</div>
+        <div class="idea-desc">Freelancers trade services without money — a designer swaps hours with a developer, a copywriter with an accountant. Verified hours tracked in-app.</div>
+        <div class="idea-footer"><span class="idea-price">$1,400</span><span class="idea-bids">5 bids · 8 days left</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="wrap">
+    <span class="eyebrow">How It Works</span>
+    <h2>From spark to <em>ownership in four steps.</em></h2>
+    <div class="rule"></div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">01</div>
+        <h3>Find an idea you love</h3>
+        <p>Browse hundreds of vetted concepts across every industry. Filter by budget, category, or auction deadline.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">02</div>
+        <h3>Place a bid</h3>
+        <p>Set your price. The auction runs until the deadline — the highest bidder wins. No hidden fees, no surprises.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">03</div>
+        <h3>Legal rights transfer</h3>
+        <p>When you win, we handle the paperwork. You receive a signed transfer of legal ownership. It's yours.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">04</div>
+        <h3>Go build it</h3>
+        <p>You now have a protected concept and the legal standing to pursue it however you see fit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="for-section">
+  <div class="wrap">
+    <span class="eyebrow">Who It's For</span>
+    <h2>Whether you're buying <em>or selling.</em></h2>
+    <div class="rule"></div>
+    <div class="for-grid">
+      <div class="for-card buyer">
+        <span class="for-label">For Buyers</span>
+        <h3>The drive to build.<br>Not always the idea.</h3>
+        <p>You're ready to start something — you just haven't found the concept worth betting on. Stop waiting for a eureka moment. Buy one.</p>
+        <ul class="for-list">
+          <li>Vetted, original ideas across dozens of industries</li>
+          <li>Full legal rights — no one else can use what you buy</li>
+          <li>Auction bidding means you set the price you're comfortable with</li>
+          <li>Available worldwide, no minimum spend</li>
+        </ul>
+        <a class="for-cta buy" href="#">Browse Ideas →</a>
+      </div>
+      <div class="for-card seller">
+        <span class="for-label">For Sellers</span>
+        <h3>Your ideas shouldn't die<br>in a notebook.</h3>
+        <p>You think of more concepts than you can ever execute. Turn your unused ideas into real income by listing them for the right builder to find.</p>
+        <ul class="for-list">
+          <li>List for free — we only take 10% when it sells</li>
+          <li>Set your own floor price, let bidders compete</li>
+          <li>We handle the legal transfer documentation</li>
+          <li>Get paid when your idea finds its builder</li>
+        </ul>
+        <a class="for-cta sell" href="#">List an Idea →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="legal-section" id="legal">
+  <div class="wrap">
+    <div class="legal-inner">
+      <div>
+        <span class="eyebrow">Legal Rights</span>
+        <h2>Ownership that <em>actually holds up.</em></h2>
+        <div class="rule"></div>
+        <p class="body-text">Every idea sold on our platform comes with a signed rights transfer document. The seller relinquishes all claims. The buyer walks away as the sole legal owner.</p>
+        <p class="body-text" style="margin-top:1rem">This is the part no other platform has ever figured out. We did.</p>
+      </div>
+      <div>
+        <div class="legal-doc">
+          <div class="legal-doc-header">
+            <div class="doc-icon">📄</div>
+            <div>
+              <div class="doc-title">Idea Rights Transfer Agreement</div>
+              <div class="doc-sub">Executed upon sale completion</div>
+            </div>
+          </div>
+          <div class="doc-row"><span class="doc-key">Idea reference</span><span class="doc-val">#IHAI-2024-0419</span></div>
+          <div class="doc-row"><span class="doc-key">Seller</span><span class="doc-val">J. Morrow (verified)</span></div>
+          <div class="doc-row"><span class="doc-key">Buyer</span><span class="doc-val">D. Chen (verified)</span></div>
+          <div class="doc-row"><span class="doc-key">Sale price</span><span class="doc-val">$3,200</span></div>
+          <div class="doc-row"><span class="doc-key">Rights status</span><span class="doc-val green">Fully transferred ✓</span></div>
+          <div class="doc-row"><span class="doc-key">Exclusivity</span><span class="doc-val green">Sole ownership ✓</span></div>
+          <div class="transfer-badge">✓ Transfer complete — rights belong to buyer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testi-section">
+  <div class="wrap">
+    <span class="eyebrow">From the community</span>
+    <h2>People are already <em>building.</em></h2>
+    <div class="rule"></div>
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"I'd been wanting to start something for three years. Bought an idea for $1,800 in March. We launched in July and hit $4k MRR by September. Still kind of in shock."</p>
+        <div class="testi-author">Marcus T.</div>
+        <div class="testi-role">Buyer · E-commerce founder</div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"Listed four ideas I'd been sitting on for years. Three sold within two weeks. Made over $9,000 from concepts that were just collecting dust in my notes app."</p>
+        <div class="testi-author">Priya K.</div>
+        <div class="testi-role">Seller · Product designer</div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"The legal transfer is what sold me. I wasn't going to pay for something and then have the original person claim rights later. This platform actually solves that problem."</p>
+        <div class="testi-author">Leo R.</div>
+        <div class="testi-role">Buyer · Serial entrepreneur</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing-section" id="pricing">
+  <div class="wrap" style="text-align:center">
+    <span class="eyebrow">Pricing</span>
+    <h2>We only win <em>when you win.</em></h2>
+    <div class="rule" style="margin:1.2rem auto 0"></div>
+  </div>
+  <div class="pricing-card">
+    <p class="price-of">Our cut</p>
+    <div class="price-big">10%</div>
+    <p class="price-of" style="margin-top:.3rem">of the final sale price. That's it.</p>
+    <p class="price-desc">No listing fees. No monthly subscriptions. No upfront costs. We take a 10% commission only when an idea successfully sells — so our incentives are perfectly aligned with yours.</p>
+    <ul class="price-bullets">
+      <li><strong>Free to list</strong> — sellers pay nothing until their idea finds a buyer</li>
+      <li><strong>Free to browse</strong> — explore the full marketplace without an account</li>
+      <li><strong>Legal docs included</strong> — rights transfer handled as part of every sale</li>
+      <li><strong>Available globally</strong> — buy and sell from anywhere in the world</li>
+    </ul>
+    <a class="nav-btn" style="display:inline-block;padding:.85rem 2.2rem;font-size:.95rem" href="#">Start for Free</a>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-glow"></div>
+  <svg width="60" height="60" viewBox="0 0 60 60" fill="none" style="margin-bottom:1.5rem;position:relative">
+    <circle cx="30" cy="30" r="29" stroke="rgba(245,166,35,.25)" stroke-width="1"/>
+    <path d="M30 12C22.268 12 16 18.268 16 26c0 4.8 2.4 9.04 6.05 11.65V41a.9.9 0 00.9.9h14.1a.9.9 0 00.9-.9v-3.35C41.6 35.04 44 30.8 44 26c0-7.732-6.268-14-14-14z" fill="#f5a623" opacity=".85"/>
+    <rect x="23" y="42" width="14" height="2.5" rx="1.25" fill="#f5a623" opacity=".6"/>
+    <rect x="24" y="45.5" width="12" height="2" rx="1" fill="#f5a623" opacity=".4"/>
+  </svg>
+  <h2>The idea is out there.<br><em>Go find it.</em></h2>
+  <p>Join thousands of entrepreneurs who stopped waiting for inspiration and started building.</p>
+  <div class="cta-actions">
+    <a class="nav-btn" style="padding:.9rem 2.2rem;font-size:1rem" href="#">Browse Ideas</a>
+    <a class="btn-ghost" href="#">List Your Idea</a>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-brand">
+    <a class="logo" href="#" style="font-size:1.05rem">
+      <svg width="22" height="22" viewBox="0 0 26 26" fill="none"><path d="M13 2C9.134 2 6 5.134 6 9c0 2.2 1.1 4.15 2.8 5.35V17a.9.9 0 00.9.9h6.6a.9.9 0 00.9-.9v-2.65C18.9 13.15 20 11.2 20 9c0-3.866-3.134-7-7-7z" fill="#f5a623"/><rect x="10" y="18" width="6" height="1.4" rx=".7" fill="#f5a623"/><rect x="10.5" y="20.3" width="5" height="1.3" rx=".65" fill="#f5a623" opacity=".65"/></svg>
+      I Have an Idea
+    </a>
+    <p>The first marketplace for buying and selling business ideas with full legal rights transfer.</p>
+  </div>
+  <div class="foot-col">
+    <h4>Marketplace</h4>
+    <ul>
+      <li><a href="#">Browse Ideas</a></li>
+      <li><a href="#">List an Idea</a></li>
+      <li><a href="#">How Bidding Works</a></li>
+      <li><a href="#">Trending Categories</a></li>
+    </ul>
+  </div>
+  <div class="foot-col">
+    <h4>Legal</h4>
+    <ul>
+      <li><a href="#">Rights Transfer FAQ</a></li>
+      <li><a href="#">Terms of Service</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Seller Agreement</a></li>
+    </ul>
+  </div>
+  <div class="foot-col">
+    <h4>Company</h4>
+    <ul>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Press</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="foot-bottom">
+  <p>© 2024 I Have an Idea. All rights reserved.</p>
+  <p>Made with 💡 by Luke K, Santi B, Ray C.</p>
+</div>
+
+</body>
+</html>
